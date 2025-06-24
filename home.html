@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - IT Softech</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero-section d-flex align-items-center text-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-dark">
+          <h1 class="display-4 fw-bold">Solutions  <br><span class="text-primary"> Related To IT </span></h1>
+        <!-- <p class="lead">We Have 25 Years Of Experience In IT Solutions</p>--> 
+          <div class="mt-4">
+            <a href="#" class="btn btn-primary me-3">SERVICE WE PROVIDE</a>
+            <a href="#" class="btn btn-outline-primary">LEARN MORE</a>
+          </div>
+        </div>
+        <div class="col-md-6 position-relative d-none d-md-block">
+          <img src="hero-img.png" alt="Hero Visual" class="img-fluid custom-hero-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional Light/Dark Mode Toggle -->
+  <div class="position-fixed bottom-0 end-0 m-4">
+    <button class="btn btn-outline-secondary" onclick="toggleTheme()">☀️</button>
+  </div>
+
+
+<!-- Services Section -->
+<section class="container my-5">
+  <div class="row g-4 align-items-center">
+    <!-- Profile Image -->
+    <div class="col-md-5">
+      <img src="feature_img.jpg" alt="Profile" class="img-fluid rounded-4 shadow-sm" />
+    </div>
+
+    <!-- Services Grid -->
+    <div class="col-md-7">
+      <div class="row g-3">
+        <!-- IT Consultancy -->
+        <div class="col-sm-6">
+          <div class="p-3 bg-white rounded shadow-sm h-100">
+            <div class="d-flex align-items-start gap-2">
+              <i class="bi bi-graph-up-arrow text-primary fs-2"></i>
+              <div>
+                <h6 class="fw-bold mb-1">IT Consultancy</h6>
+                <p class="mb-0 text-muted small">Faster & Smarter Solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cyber Security -->
+        <div class="col-sm-6">
+          <div class="p-3 bg-white rounded shadow-sm h-100">
+            <div class="d-flex align-items-start gap-2">
+              <i class="bi bi-unlock text-primary fs-2"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Cyber Security</h6>
+                <p class="mb-0 text-muted small">Faster & Smarter Solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Development -->
+        <div class="col-sm-6">
+          <div class="p-3 bg-white rounded shadow-sm h-100">
+            <div class="d-flex align-items-start gap-2">
+              <i class="bi bi-phone text-primary fs-2"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Development</h6>
+                <p class="mb-0 text-muted small">Faster & Smarter Solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UX/UI Strategy -->
+        <div class="col-sm-6">
+          <div class="p-3 bg-white rounded shadow-sm h-100">
+            <div class="d-flex align-items-start gap-2">
+              <i class="bi bi-controller text-primary fs-2"></i>
+              <div>
+                <h6 class="fw-bold mb-1">UX/UI Strategy</h6>
+                <p class="mb-0 text-muted small">Faster & Smarter Solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blue CTA -->
+       <!-- <div class="col-12">
+          <div class="p-4 rounded-3 text-white text-center" style="background: #0d6efd;">
+            <p class="mb-0 fw-semibold fs-5">
+              Sed perspiciatis unde omnis iste natus error voluptatem accusantium
+              doloremque laudantium totam rem aperiam eaque quae
+            </p>
+          </div>
+        </div>-->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Professional Services Start -->
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Our Professional Solutions <br> For IT Businesses</h2>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-3">
+      <div class="card text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/1164/1164724.png" class="mx-auto" alt="Manage IT Services">
+        <h5 class="card-title">Manage IT Services</h5>
+        <p class="card-text">We offer IT service management for your business operations.</p>
+        <a href="#" class="learn-more">Learn More →</a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3785/3785411.png" class="mx-auto" alt="Product Engineering">
+        <h5 class="card-title">Product Engineering</h5>
+        <p class="card-text">Innovative product development to transform your ideas into reality.</p>
+        <a href="#" class="learn-more">Learn More →</a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/4324/4324502.png" class="mx-auto" alt="Web Development">
+        <h5 class="card-title">Web Development</h5>
+        <p class="card-text">Custom web development solutions to help your business grow online.</p>
+        <a href="#" class="learn-more">Learn More →</a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/2267/2267373.png" class="mx-auto" alt="Digital Solutions">
+        <h5 class="card-title">Digital Solutions</h5>
+        <p class="card-text">Complete digital solutions to streamline your business processes.</p>
+        <a href="#" class="learn-more">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Professional Services End -->
+
+<!-- Our Team Section Start -->
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Meet Our Team</h2>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-3">
+      <div class="card text-center">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mx-auto mt-4" alt="Team Member 1" width="120" height="120">
+        <div class="card-body">
+          <h5 class="card-title">John Doe</h5>
+          <p class="card-text text-white">CEO & Founder</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mx-auto mt-4" alt="Team Member 2" width="120" height="120">
+        <div class="card-body">
+          <h5 class="card-title">Emily Smith</h5>
+          <p class="card-text text-white">Project Manager</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" class="rounded-circle mx-auto mt-4" alt="Team Member 3" width="120" height="120">
+        <div class="card-body">
+          <h5 class="card-title">Michael Brown</h5>
+          <p class="card-text text-white">Lead Developer</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <img src="https://randomuser.me/api/portraits/women/55.jpg" class="rounded-circle mx-auto mt-4" alt="Team Member 4" width="120" height="120">
+        <div class="card-body">
+          <h5 class="card-title">Sophia Wilson</h5>
+          <p class="card-text text-white">UI/UX Designer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Our Team Section End -->
+
+
+  <script src="layoutLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
