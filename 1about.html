@@ -1,7 +1,40 @@
 {% extends "baseLayout.html" %}
 
-{% block title %}Home - IT Softech{% endblock %}
+{% block title %}About - IT Softech{% endblock %}
 
 {% block content %}
+<section class="container my-5">
+  <div class="row align-items-center g-5">
+    <!-- Text Section -->
+    <div class="col-md-6">
+      <p class="text-uppercase text-primary fw-bold mb-2">About Company</p>
+      <h2 class="fw-bold display-6 mb-4">
+        IT Softech – Your Partner in Digital Transformation
+      </h2>
+      <p class="text-muted mb-4">
+          At IT Softech, we specialize in building smart, scalable, and secure IT solutions.
+  Whether you're a startup or an enterprise, we bring expert-level software development,
+  cybersecurity, and cloud deployment services to accelerate your business.
+      </p>
+
+      <!-- Card -->
+      <div class="p-3 border rounded-4 d-flex align-items-start gap-3 bg-white shadow-sm">
+        <i class="bi bi-people-fill text-primary fs-2"></i>
+       <!-- <div>
+         <h5 class="fw-bold mb-1">Professionaol Consultants</h5>
+          <p class="mb-0 text-muted small">
+            Quis autem vel eum iure reprehenderit quin voluptate velit esse quam
+          </p>
+        
+        </div>-->
+      </div>
+    </div>
+
+    <!-- Image Section -->
+    <div class="col-md-6 text-center">
+      <img src="/static/images/about_us.jpg" alt="Consultants" class="img-fluid rounded-4 shadow-sm" />
+    </div>
+  </div>
+</section>
 
 {% endblock %}

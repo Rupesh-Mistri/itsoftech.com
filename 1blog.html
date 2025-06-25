@@ -1,0 +1,76 @@
+{% extends "baseLayout.html" %}
+
+{% block title %}Blog - IT Softech{% endblock %}
+
+{% block content %}
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Sidebar -->
+      <div class="col-lg-4 col-xl-3 mt-5 mt-lg-0 order-2 order-lg-1">
+        <div class="bg-white p-4 rounded shadow-sm">
+
+          <!-- Categories -->
+          <div class="mb-4">
+            <h5 class="fw-bold mb-3">Categories</h5>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">Technology</a>
+              <a href="#" class="list-group-item list-group-item-action">Web Development</a>
+              <a href="#" class="list-group-item list-group-item-action">Digital Strategy</a>
+              <a href="#" class="list-group-item list-group-item-action">AI & Data</a>
+              <a href="#" class="list-group-item list-group-item-action">UI/UX Design</a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="mb-4">
+            <h5 class="fw-bold mb-3">Subscribe to Newsletter</h5>
+            <form>
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Your Email">
+              </div>
+              <button type="submit" class="btn btn-primary w-100">
+                Subscribe <i class="fas fa-paper-plane ms-2"></i>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Blog Posts -->
+      <div class="col-lg-7 offset-lg-1 col-xl-7 order-1 order-lg-2">
+        <div class="bg-white p-4 rounded shadow-sm">
+
+          <!-- Blog Post -->
+          <article class="mb-5">
+            <img src="/static/images/How_AI_is_Operations.jpg" class="img-fluid rounded mb-3" alt="Post">
+            <h2 class="fw-bold">How AI is Transforming Business Operations</h2>
+            <p class="text-muted">Posted on June 20, 2025 by <strong>Admin</strong></p>
+            <p>
+              Artificial Intelligence is redefining how businesses operate—automating processes, enhancing decision-making, and delivering personalized experiences at scale. Learn how to stay ahead in the AI era.
+            </p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+          </article>
+
+          <!-- Another Blog Post -->
+          <article class="mb-5">
+            <img src="/static/images/5_Web_Design_Trends_to_Watch_in_2025.jpg" class="img-fluid rounded mb-3" alt="Post">
+            <h2 class="fw-bold">5 Web Design Trends to Watch in 2025</h2>
+            <p class="text-muted">Posted on June 10, 2025 by <strong>Design Team</strong></p>
+            <p>
+              From immersive animations to minimalist layouts, discover the latest trends in web design that will help you stay modern and user-focused.
+            </p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+          </article>
+
+          <!-- Add more posts here -->
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

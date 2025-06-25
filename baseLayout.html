@@ -39,6 +39,11 @@
     .learn-more:hover {
       text-decoration: underline;
     }
+
+    .custom-hero-img {
+  max-height: 500px;
+  object-fit: contain;
+}
   </style>
 </head>
 <body>
@@ -46,7 +51,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top" style="background-color: #75767b;">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">
+      <a class="navbar-brand fw-bold" href="/">
         <img src="/static/images/logo2.png" alt="IT Softech Logo" width="80" height="80" />
         IT Softech
       </a>
@@ -57,10 +62,10 @@
         <ul class="navbar-nav me-3">
           <li class="nav-item"><a class="nav-link fw-semibold" href="/">Home</a></li>
           <li class="nav-item"><a class="nav-link fw-semibold" href="/about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#">Services</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="/services">Services</a></li>
           <li class="nav-item"><a class="nav-link fw-semibold" href="#">Team</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#">Pricing</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#">Blog</a></li>
+      {#    <li class="nav-item"><a class="nav-link fw-semibold" href="#">Pricing</a></li> #}
+          <li class="nav-item"><a class="nav-link fw-semibold" href="/blog">Blog</a></li>
         </ul>
         <a href="#" class="btn btn-primary fw-bold">CONSULTANCY</a>
       </div>
