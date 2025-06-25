@@ -1,2 +1,13 @@
 RewriteEngine On
-RewriteRule ^about/$ /about.html [L]
+
+# Map /about to about.html
+RewriteRule ^about/?$ about.html [L]
+
+# Map /services to services.html
+RewriteRule ^services/?$ services.html [L]
+
+# Map /blog to blog.html
+RewriteRule ^blog/?$ blog.html [L]
+
+# Map / (already works if index.html present)
+# No rule needed for / as index.html is default
