@@ -3,9 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog - IT Softech</title>
+  <title>Insights & Blog Articles | IT Softech</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="IT Softech - Website, Web App & Mobile App Development" />
+  <meta name="description" content="IT Softech offers top-tier web development, app development, and digital marketing services to help businesses grow online efficiently." />
+  <meta name="keywords" content="web development, app development, mobile app, digital marketing, Ranchi, IT company, IT Softech" />
+  <meta name="author" content="IT Softech" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.itsoftech.com/" />
+  <meta property="og:title" content="IT Softech - Website & App Development Company" />
+  <meta property="og:description" content="Grow your online business with IT Softech's expert web and mobile app development solutions." />
+  <meta property="og:image" content="/static/images/logo2.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="IT Softech - Web, App & Digital Services" />
+  <meta property="twitter:description" content="IT Softech is a creative digital company providing web/app development and strategic marketing." />
+  <meta property="twitter:image" content="/static/images/logo2.png" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.itsoftech.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "IT Softech",
+  "url": "https://www.itsoftech.com",
+  "logo": "https://www.itsoftech.com/static/images/logo2.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-7654994344",
+    "contactType": "Customer Service",
+    "areaServed": "IN",
+    "availableLanguage": "en"
+  },
+  "sameAs": [
+    "https://www.facebook.com/itsoftech",
+    "https://www.instagram.com/itsoftech",
+    "https://www.linkedin.com/company/itsoftech"
+  ]
+}
+</script>
+
+
+  <!-- Styles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/static/style.css" />
+  
+  <meta name="description" content="Stay updated with the latest trends in AI, web development, digital strategy, and UI/UX. Explore expert insights from IT Softech.">
+  <meta name="keywords" content="IT Softech blog, AI in business, web design trends, technology blog, digital transformation, UX design, software insights">
+  <link rel="canonical" href="/blog">
+  <meta property="og:title" content="IT Softech Blog - Tech Insights, Web, AI, and Strategy" />
+  <meta property="og:description" content="Explore our expert blog posts on artificial intelligence, digital strategy, web development, and UI/UX design." />
+  <meta property="og:url" content="/blog" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+
+
+  <!-- Internal Styles -->
   <style>
     .card {
       background-color: #5b50ba;
@@ -39,15 +101,13 @@
     .learn-more:hover {
       text-decoration: underline;
     }
-
     .custom-hero-img {
-  max-height: 500px;
-  object-fit: contain;
-}
-
-carousel-item.{
-  margin-top: 2px;
-}
+      max-height: 500px;
+      object-fit: contain;
+    }
+    .carousel-item {
+      margin-top: 2px;
+    }
   </style>
 </head>
 <body>
@@ -81,14 +141,14 @@ carousel-item.{
 <section class="py-5 bg-light">
   <div class="container">
     <div class="row">
-      
+
       <!-- Sidebar -->
-      <div class="col-lg-4 col-xl-3 mt-5 mt-lg-0 order-2 order-lg-1">
+      <aside class="col-lg-4 col-xl-3 mt-5 mt-lg-0 order-2 order-lg-1">
         <div class="bg-white p-4 rounded shadow-sm">
 
           <!-- Categories -->
-          <div class="mb-4">
-            <h5 class="fw-bold mb-3">Categories</h5>
+          <nav aria-label="Blog Categories" class="mb-4">
+            <h2 class="h5 fw-bold mb-3">Categories</h2>
             <div class="list-group">
               <a href="#" class="list-group-item list-group-item-action">Technology</a>
               <a href="#" class="list-group-item list-group-item-action">Web Development</a>
@@ -96,54 +156,59 @@ carousel-item.{
               <a href="#" class="list-group-item list-group-item-action">AI & Data</a>
               <a href="#" class="list-group-item list-group-item-action">UI/UX Design</a>
             </div>
-          </div>
+          </nav>
 
-          <!-- Newsletter -->
-          <div class="mb-4">
-            <h5 class="fw-bold mb-3">Subscribe to Newsletter</h5>
+          <!-- Newsletter Signup -->
+          <section aria-label="Newsletter Signup" class="mb-4">
+            <h2 class="h5 fw-bold mb-3">Subscribe to Newsletter</h2>
             <form>
               <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Your Email">
+                <label for="email" class="visually-hidden">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="Your Email" required>
               </div>
               <button type="submit" class="btn btn-primary w-100">
                 Subscribe <i class="fas fa-paper-plane ms-2"></i>
               </button>
             </form>
-          </div>
+          </section>
 
         </div>
-      </div>
+      </aside>
 
-      <!-- Blog Posts -->
-      <div class="col-lg-7 offset-lg-1 col-xl-7 order-1 order-lg-2">
+      <!-- Blog Content -->
+      <main class="col-lg-7 offset-lg-1 col-xl-7 order-1 order-lg-2">
         <div class="bg-white p-4 rounded shadow-sm">
 
-          <!-- Blog Post -->
+          <!-- Blog Post 1 -->
           <article class="mb-5">
-            <img src="/static/images/How_AI_is_Operations.jpg" class="img-fluid rounded mb-3" alt="Post">
-            <h2 class="fw-bold">How AI is Transforming Business Operations</h2>
-            <p class="text-muted">Posted on June 20, 2025 by <strong>Admin</strong></p>
+            <img src="/static/images/How_AI_is_Operations.jpg" class="img-fluid rounded mb-3" alt="Artificial Intelligence in Business Operations">
+            <header>
+              <h1 class="h4 fw-bold">How AI is Transforming Business Operations</h1>
+              <p class="text-muted">Posted on <time datetime="2025-06-20">June 20, 2025</time> by <strong>Admin</strong></p>
+            </header>
             <p>
-              Artificial Intelligence is redefining how businesses operate—automating processes, enhancing decision-making, and delivering personalized experiences at scale. Learn how to stay ahead in the AI era.
+              Artificial Intelligence is redefining how businesses operate—automating processes, enhancing decision-making, and delivering personalized experiences at scale. Learn how to stay ahead in the AI era with practical insights and strategies.
             </p>
-            <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+            <a href="#" class="btn btn-outline-primary btn-sm" aria-label="Read full article on AI in business">Read More</a>
           </article>
 
-          <!-- Another Blog Post -->
+          <!-- Blog Post 2 -->
           <article class="mb-5">
-            <img src="/static/images/5_Web_Design_Trends_to_Watch_in_2025.jpg" class="img-fluid rounded mb-3" alt="Post">
-            <h2 class="fw-bold">5 Web Design Trends to Watch in 2025</h2>
-            <p class="text-muted">Posted on June 10, 2025 by <strong>Design Team</strong></p>
+            <img src="/static/images/5_Web_Design_Trends_to_Watch_in_2025.jpg" class="img-fluid rounded mb-3" alt="Web Design Trends for 2025">
+            <header>
+              <h2 class="h4 fw-bold">5 Web Design Trends to Watch in 2025</h2>
+              <p class="text-muted">Posted on <time datetime="2025-06-10">June 10, 2025</time> by <strong>Design Team</strong></p>
+            </header>
             <p>
-              From immersive animations to minimalist layouts, discover the latest trends in web design that will help you stay modern and user-focused.
+              From immersive animations to minimalist layouts, discover the latest trends in web design that help brands stay modern, engaging, and user-focused. These trends are shaping the digital experience for tomorrow.
             </p>
-            <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+            <a href="#" class="btn btn-outline-primary btn-sm" aria-label="Read full article on web design trends">Read More</a>
           </article>
 
-          <!-- Add more posts here -->
+          <!-- Add more blog posts here using similar structure -->
 
         </div>
-      </div>
+      </main>
 
     </div>
   </div>

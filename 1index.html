@@ -1,8 +1,31 @@
 {% extends "baseLayout.html" %}
 
-{% block title %}Home - IT Softech{% endblock %}
+
+{% block title %}Best IT Services | Web Development, App Solutions - IT Softech{% endblock %}
+{% block head_part %}
+<!-- Essential Meta Tags -->
+<meta name="description" content="IT Softech offers innovative IT consultancy, web development, cybersecurity, and digital transformation services tailored to help your business grow." />
+<meta name="keywords" content="IT consultancy, web development, mobile app, digital marketing, Ranchi IT services, cybersecurity, UI/UX design" />
+<meta name="author" content="IT Softech" />
+
+<!-- Open Graph Tags for Social Sharing -->
+<meta property="og:title" content="IT Softech - IT Services & Digital Solutions in Ranchi" />
+<meta property="og:description" content="Get reliable web, app development, and IT consultancy services. Scalable digital solutions for modern businesses." />
+<meta property="og:image" content="/static/images/hero-img.png" />
+<meta property="og:url" content="https://www.itsoftech.com/" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="IT Softech - Your Digital Growth Partner" />
+<meta name="twitter:description" content="Explore our web development, mobile apps, and IT services tailored for startups and enterprises." />
+<meta name="twitter:image" content="/static/images/hero-img.png" />
+
+
+{% endblock head_part %}
 
 {% block content %}
+<main>
 <!-- Hero Section -->
 <section id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -18,14 +41,14 @@
                 Solutions <br><span class="text-primary">Related To IT</span>
               </h1>
               <div class="mt-4">
-                <a href="#" class="btn btn-primary me-2">SERVICE WE PROVIDE</a>
-                <a href="#" class="btn btn-outline-primary">LEARN MORE</a>
+                <a href="javascript:void(0)" class="btn btn-primary me-2">SERVICE WE PROVIDE</a>
+                <a href="javascript:void(0)" class="btn btn-outline-primary">LEARN MORE</a>
               </div>
             </div>
 
             <!-- Image -->
             <div class="col-md-6 text-center mt-2">
-              <img src="/static/images/hero-img.png" alt="Hero Visual" class="img-fluid custom-hero-img">
+              <img src="/static/images/hero-img.png" alt="IT services company Ranchi web development" class="img-fluid custom-hero-img">
             </div>
           </div>
         </div>
@@ -43,14 +66,14 @@
                 Empowering <br><span class="text-primary">Digital Transformation</span>
               </h1>
               <div class="mt-4">
-                <a href="#" class="btn btn-primary me-2">OUR SOLUTIONS</a>
-                <a href="#" class="btn btn-outline-primary">DISCOVER</a>
+                <a href="javascript:void(0)" class="btn btn-primary me-2">OUR SOLUTIONS</a>
+                <a href="javascript:void(0)" class="btn btn-outline-primary">DISCOVER</a>
               </div>
             </div>
 
             <!-- Image -->
             <div class="col-md-6 text-center mt-2">
-              <img src="/static/images/hero-img2.png" alt="Digital Transformation" class="img-fluid custom-hero-img">
+              <img src="/static/images/hero-img2.png" alt="Digital Transformation" loading="lazy" class="img-fluid custom-hero-img">
             </div>
           </div>
         </div>
@@ -60,10 +83,10 @@
   </div>
 
   <!-- Controls -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" aria-label="Previous slide" data-bs-target="#heroCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" aria-label="Next slide" data-bs-target="#heroCarousel" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
   </button>
 </section>
@@ -168,7 +191,7 @@
         <img src="https://cdn-icons-png.flaticon.com/512/1164/1164724.png" class="mx-auto" alt="Manage IT Services">
         <h5 class="card-title">Manage IT Services</h5>
         <p class="card-text">We offer IT service management for your business operations.</p>
-        <a href="#" class="learn-more">Learn More →</a>
+        <a href="javascript:void(0)" class="learn-more">Learn More →</a>
       </div>
     </div>
     <div class="col-md-3">
@@ -176,7 +199,7 @@
         <img src="https://cdn-icons-png.flaticon.com/512/3785/3785411.png" class="mx-auto" alt="Product Engineering">
         <h5 class="card-title">Product Engineering</h5>
         <p class="card-text">Innovative product development to transform your ideas into reality.</p>
-        <a href="#" class="learn-more">Learn More →</a>
+        <a href="javascript:void(0)" class="learn-more">Learn More →</a>
       </div>
     </div>
     <div class="col-md-3">
@@ -184,7 +207,7 @@
         <img src="https://cdn-icons-png.flaticon.com/512/4324/4324502.png" class="mx-auto" alt="Web Development">
         <h5 class="card-title">Web Development</h5>
         <p class="card-text">Custom web development solutions to help your business grow online.</p>
-        <a href="#" class="learn-more">Learn More →</a>
+        <a href="javascript:void(0)" class="learn-more">Learn More →</a>
       </div>
     </div>
     <div class="col-md-3">
@@ -192,7 +215,7 @@
         <img src="https://cdn-icons-png.flaticon.com/512/2267/2267373.png" class="mx-auto" alt="Digital Solutions">
         <h5 class="card-title">Digital Solutions</h5>
         <p class="card-text">Complete digital solutions to streamline your business processes.</p>
-        <a href="#" class="learn-more">Learn More →</a>
+        <a href="javascript:void(0)" class="learn-more">Learn More →</a>
       </div>
     </div>
   </div>
@@ -245,4 +268,5 @@
   </div>
 </div>
 <!-- Our Team Section End -->
+</main>
 {% endblock %}
