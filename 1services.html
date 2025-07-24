@@ -20,11 +20,11 @@
 session_start();
 $message = $_SESSION['thank_you_msg'] ?? "Thank you!";
 if ($message) {
-    echo '<div class="alert alert-success text-center elpuru_alert_desapp" role="alert" style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%); z-index: 1050; width: 50%;">';
-    echo htmlspecialchars($message);
-    echo '</div>';
+    echo('<div class="alert alert-success text-center elpuru_alert_desapp" role="alert" style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%); z-index: 1050; width: 50%;">');
+    echo ($message);
+    echo('</div>');
 }
-unset($_SESSION['thank_you_msg']); // Optional: clear message after showing
+unset($_SESSION['thank_you_msg']); 
 ?>
 
 <script>
