@@ -16,31 +16,7 @@
 <section class="py-5 bg-light">
   <div class="container">
     <div class="row">
-<?php
-session_start();
-$message = $_SESSION['thank_you_msg'] ?? "Thank you!";
-if ($message) {
-    echo('<div class="alert alert-success text-center elpuru_alert_desapp" role="alert" style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%); z-index: 1050; width: 50%;">');
-    echo ($message);
-    echo('</div>');
-}
-unset($_SESSION['thank_you_msg']); 
-?>
 
-<script>
-    setTimeout(function() {
-        // Select all elements with the class 'elpuru_alert_desapp'
-        var alerts = document.getElementsByClassName('elpuru_alert_desapp');
-        
-        // Loop through each alert and fade it out
-        for (var i = 0; i < alerts.length; i++) {
-            var alert = alerts[i];
-            alert.style.opacity = 0; // Fade out the alert
-            alert.classList.remove('show'); // Remove the 'show' class for Bootstrap fade-out effect
-            alert.classList.add('fade'); // Add the 'fade' class for smooth transition
-        }
-    }, 5000); // Delay of 5 seconds before the fade-out happens
-</script>
       <!-- Sidebar -->
       <aside class="col-lg-4 col-xl-3 mt-5 mt-lg-0 order-2 order-lg-1">
         <div class="bg-white p-4 rounded shadow-sm">
@@ -59,23 +35,25 @@ unset($_SESSION['thank_you_msg']);
           <!-- Contact Form -->
           <section aria-label="Quick Contact Form" class="mb-4">
             <h2 class="h5 fw-bold mb-3 text-primary">Contact Us</h2>
-            <form method="POST" action="/save-contact.php">
-              <div class="mb-3">
-                <label for="mobile_no" class="form-label ">Mobile No.</label>
-                <input type="tel" class="form-control" name="mobile_no" placeholder="Mobile No." required>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label ">Email address</label>
-                <input type="email" class="form-control" name="email" placeholder="Email Address" required>
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label ">Your message</label>
-                <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">
-                Send Message <i class="fas fa-paper-plane ms-2"></i>
-              </button>
-            </form>
+<form id="contactForm" method="POST">
+  <div class="mb-3">
+    <label for="mobile_no" class="form-label">Mobile No.</label>
+    <input type="tel" class="form-control" name="mobile_no" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" required>
+  </div>
+  <div class="mb-3">
+    <label for="message" class="form-label">Your message</label>
+    <textarea class="form-control" name="message" rows="4" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary w-100">
+    Send Message <i class="fas fa-paper-plane ms-2"></i>
+  </button>
+</form>
+<div id="formSuccessMessage" class="alert alert-success mt-3 d-none"></div>
+
           </section>
         </div>
       </aside>
@@ -118,4 +96,34 @@ unset($_SESSION['thank_you_msg']);
     </div>
   </div>
 </section>
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault(); // prevent form default
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch("/save-contact.php", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      document.getElementById("formSuccessMessage").textContent = data.message;
+      document.getElementById("formSuccessMessage").classList.remove("d-none");
+      form.reset();
+    } else {
+      alert(data.message || "An error occurred. Please try again.");
+    }
+
+  } catch (err) {
+    console.error("Error:", err);
+    alert("Something went wrong.");
+  }
+});
+</script>
+
 {% endblock %}
