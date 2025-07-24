@@ -37,14 +37,7 @@ $stmt->bind_param("sss", $mobile, $email, $message);
 $stmt->execute();
 $stmt->close();
 
-// // Send email
-// $to = "your_email@domain.com";
-// $subject = "New Contact Form Submission";
-// $body = "Mobile: $mobile\nEmail: $email\n\nMessage:\n$message";
-// $headers = "From: noreply@itsoftech.com";
-// mail($to, $subject, $body, $headers);
-
-// $conn->close();
+$conn->close(); // ✅ DO NOT COMMENT THIS OUT
 
 echo json_encode([
   "success" => true,
