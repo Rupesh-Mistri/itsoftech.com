@@ -55,6 +55,8 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
   <link rel="stylesheet" href="/static/style.css" />
   
   <!-- Meta Description for SEO -->
@@ -65,7 +67,6 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="/about" />
-
 
 
   <!-- Internal Styles -->
@@ -132,7 +133,7 @@
       
           <li class="nav-item"><a class="nav-link fw-semibold" href="/blog">Blog</a></li>
         </ul>
-        <a href="#" class="btn btn-primary fw-bold">CONSULTANCY</a>
+        <a href="https://api.whatsapp.com/send?phone=917654994344&text=Hello%20I%20want%20IT%20service" target="_blank" class="btn btn-primary fw-bold">CONSULTANCY</a>
       </div>
     </div>
   </nav>
@@ -140,95 +141,163 @@
   <!-- Main Content -->
   
 <main>
-<section class="container my-5">
-  <div class="row align-items-center g-5">
-    <!-- Text Section -->
-    <div class="col-md-6">
-      <p class="text-uppercase text-primary fw-bold mb-2">About Company</p>
-      <h2 class="fw-bold display-6 mb-4">
-        IT Softech – Your Partner in Digital Transformation
-      </h2>
-      <p class="text-muted mb-4">
+  <!-- About Section -->
+  <section class="container my-5">
+    <div class="row align-items-center g-5">
+      <!-- Text Section -->
+      <div class="col-md-6">
+        <p class="text-uppercase text-primary fw-bold mb-2">About Company</p>
+        <h2 class="fw-bold display-6 mb-4">IT Softech – Your Partner in Digital Transformation</h2>
+        <p class="text-muted mb-4">
           At IT Softech, we specialize in building smart, scalable, and secure IT solutions.
-  Whether you're a startup or an enterprise, we bring expert-level software development,
-  cybersecurity, and cloud deployment services to accelerate your business.
-      </p>
+          Whether you're a startup or an enterprise, we bring expert-level software development,
+          cybersecurity, and cloud deployment services to accelerate your business growth.
+        </p>
 
-      <!-- Card -->
-      <div class="p-3 border rounded-4 d-flex align-items-start gap-3 bg-white shadow-sm">
-        <i class="bi bi-people-fill text-primary fs-2"></i>
-       <!-- <div>
-         <h5 class="fw-bold mb-1">Professionaol Consultants</h5>
-          <p class="mb-0 text-muted small">
-            Quis autem vel eum iure reprehenderit quin voluptate velit esse quam
-          </p>
-        
-        </div>-->
+        <!-- Highlights Card -->
+        <div class="p-3 border rounded-4 d-flex align-items-start gap-3 bg-white shadow-sm">
+          <i class="bi bi-people-fill text-primary fs-2"></i>
+          <div>
+            <h5 class="fw-bold mb-1">Professional Consultants</h5>
+            <p class="mb-0 text-muted small">
+              Our expert team ensures tailored strategies, robust security, and scalable solutions that fit your business perfectly.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="col-md-6 text-center">
+        <img src="/static/images/about_us.jpg" alt="Consultants" class="img-fluid rounded-4 shadow-sm" />
       </div>
     </div>
+  </section>
 
-    <!-- Image Section -->
-    <div class="col-md-6 text-center">
-      <img src="/static/images/about_us.jpg" alt="Consultants" class="img-fluid rounded-4 shadow-sm" />
+  <!-- Mission & Vision Section -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-6 mb-4">
+          <h4 class="fw-bold text-primary mb-3">Our Mission</h4>
+          <p class="text-muted">
+            To empower businesses through innovative, secure, and scalable IT solutions that drive digital transformation and long-term success.
+          </p>
+        </div>
+        <div class="col-md-6 mb-4">
+          <h4 class="fw-bold text-primary mb-3">Our Vision</h4>
+          <p class="text-muted">
+            To be a trusted global leader in IT services, known for integrity, innovation, and customer satisfaction.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Company Values Section -->
+  <section class="container my-5">
+    <h3 class="fw-bold text-center mb-4">Core Values That Define Us</h3>
+    <div class="row text-center">
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-lightbulb-fill fs-1 text-warning"></i>
+        <h6 class="fw-bold mt-3">Innovation</h6>
+        <p class="small text-muted">Always evolving with the latest technologies to stay ahead.</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-shield-lock-fill fs-1 text-danger"></i>
+        <h6 class="fw-bold mt-3">Security</h6>
+        <p class="small text-muted">Your data and infrastructure are protected with enterprise-grade solutions.</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-people-fill fs-1 text-success"></i>
+        <h6 class="fw-bold mt-3">Collaboration</h6>
+        <p class="small text-muted">We work closely with our clients as partners, not vendors.</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-award-fill fs-1 text-primary"></i>
+        <h6 class="fw-bold mt-3">Excellence</h6>
+        <p class="small text-muted">Delivering high-quality solutions that exceed expectations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-primary text-white py-5 text-center">
+    <div class="container">
+      <h4 class="fw-bold mb-3">Ready to Elevate Your Digital Game?</h4>
+      <p class="mb-4">Let’s collaborate to craft impactful solutions for your business.</p>
+      <a href="/contact" class="btn btn-light btn-lg px-4">Contact Us</a>
+    </div>
+  </section>
 </main>
 
 
-  <!-- Footer -->
-  <footer class="bg-white text-dark  border-top">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-md-4">
-          <p class="mt-3">
-            IT Softech is a client-focused company for creative website, web app, mobile app development with strategic digital marketing perfect for businesses aiming to launch or scale their online presence efficiently.
-          </p>
-        </div>
-        <div class="col-md-4">
-          <h6 class="fw-bold">Company</h6>
-          <ul class="list-unstyled">
-            <li><a href="/about" class="text-decoration-none text-dark">➤ About Us</a></li>
-           
-           
-           
-            <li><a href="/blog" class="text-decoration-none text-dark">➤ Blog Post</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h6 class="fw-bold">Contact Us</h6>
-          <p><i class="bi bi-geo-alt-fill text-primary"></i> Address: Near Shri Krishana Nursing Home, Booty Basti, Ranchi, Jharkand</p>
-          <p><i class="bi bi-envelope-fill text-primary"></i> Email: info@itsoftech.com</p>
-          <p><i class="bi bi-telephone-fill text-primary"></i> Mobile No.: 7654994344</p>
-        </div>
+ <!-- Footer -->
+<footer class="bg-light text-dark border-top pt-5">
+  <div class="container">
+    <div class="row gy-4">
+      <!-- About Section -->
+      <div class="col-md-4">
+        <h6 class="fw-bold mb-3 text-primary">About IT Softech</h6>
+        <p>
+          IT Softech is a client-focused company delivering creative websites, web & mobile apps, and strategic digital marketing—ideal for businesses looking to launch or scale their online presence.
+        </p>
       </div>
-      <div class="d-flex justify-content-between align-items-center border-top mt-4 pt-3">
-        <p class="mb-0">© 2025 <strong class="text-primary">itsoftech.com</strong>. All Rights Reserved</p>
+
+      <!-- Company Links -->
+      <div class="col-md-4">
+        <h6 class="fw-bold mb-3 text-primary">Company</h6>
+        <ul class="list-unstyled">
+          <li><a href="/about" class="text-decoration-none text-dark d-block mb-2">➤ About Us</a></li>
+          <li><a href="/blog" class="text-decoration-none text-dark d-block mb-2">➤ Blog Post</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4">
+        <h6 class="fw-bold mb-3 text-primary">Contact Us</h6>
+        <p class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-success"></i>Near Shri Krishana Nursing Home, Booty Basti, Ranchi, Jharkhand</p>
+        <p class="mb-2"><i class="bi bi-envelope-fill me-2 text-success"></i><a href="mailto:info@itsoftech.com" class="text-decoration-none text-dark">info@itsoftech.com</a></p>
+        <p><i class="bi bi-telephone-fill me-2 text-success"></i><a href="tel:7654994344" class="text-decoration-none text-dark">7654994344</a></p>
       </div>
     </div>
-      <!-- Back To Top -->
-<!-- Back To Top -->
-<div class="position-fixed bottom-0 end-0 m-4">
-  <button 
-    class="btn btn-success rounded-circle d-flex align-items-center justify-content-center" 
-    style="width: 50px; height: 50px;" 
-    onclick="gototop()"
-    aria-label="Back to Top"
-  >
-   ↑
-  </button>
-</div>
-<script>
-  function gototop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
-</script>
 
+    <!-- Divider -->
+    <hr class="my-4">
 
-  </footer>
+    <!-- Bottom Row -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center">
+      <p class="mb-0 ">© 2025 <strong class="text-primary">itsoftech.com</strong>. All Rights Reserved.</p>
+      <!-- Social Icons (Optional) -->
+      <div class="mt-2 mt-md-0 mb-2">
+        <a href="#" class="text-dark me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-dark me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-dark"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back To Top Button -->
+  <div class="position-fixed bottom-0 end-0 m-4">
+    <button 
+      class="btn btn-success shadow rounded-circle d-flex align-items-center justify-content-center" 
+      style="width: 50px; height: 50px;" 
+      onclick="gototop()" 
+      aria-label="Back to Top"
+    >
+      <i class="bi bi-arrow-up"></i>
+    </button>
+  </div>
+
+  <script>
+    function gototop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/static/script.js"></script>

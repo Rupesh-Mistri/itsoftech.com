@@ -8,7 +8,6 @@
   <link rel="canonical" href="/services">
   <meta property="og:title" content="IT Services & Solutions | IT Softech" />
   <meta property="og:description" content="Explore our comprehensive range of IT services – development, consulting, UI/UX, and more. Partner with IT Softech for scalable digital success." />
-  
   <meta property="og:url" content="/services" />
   <meta name="twitter:card" content="summary_large_image" />
 {% endblock %}
@@ -17,62 +16,88 @@
 <section class="py-5 bg-light">
   <div class="container">
     <div class="row">
+<?php
+session_start();
+$message = $_SESSION['thank_you_msg'] ?? "Thank you!";
+if ($message) {
+    echo '<div class="alert alert-success text-center elpuru_alert_desapp" role="alert" style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%); z-index: 1050; width: 50%;">';
+    echo htmlspecialchars($message);
+    echo '</div>';
+}
+unset($_SESSION['thank_you_msg']); // Optional: clear message after showing
+?>
 
+<script>
+    setTimeout(function() {
+        // Select all elements with the class 'elpuru_alert_desapp'
+        var alerts = document.getElementsByClassName('elpuru_alert_desapp');
+        
+        // Loop through each alert and fade it out
+        for (var i = 0; i < alerts.length; i++) {
+            var alert = alerts[i];
+            alert.style.opacity = 0; // Fade out the alert
+            alert.classList.remove('show'); // Remove the 'show' class for Bootstrap fade-out effect
+            alert.classList.add('fade'); // Add the 'fade' class for smooth transition
+        }
+    }, 5000); // Delay of 5 seconds before the fade-out happens
+</script>
       <!-- Sidebar -->
       <aside class="col-lg-4 col-xl-3 mt-5 mt-lg-0 order-2 order-lg-1">
         <div class="bg-white p-4 rounded shadow-sm">
-
           <!-- Service Categories -->
           <nav aria-label="Service Categories" class="mb-4">
-            <h2 class="h5 fw-bold mb-3">Our Services</h2>
+            <h2 class="h5 fw-bold mb-3 text-primary">Our Services</h2>
             <div class="list-group">
-              <a href="services.html#it-consultancy" class="list-group-item list-group-item-action">IT Consultancy</a>
-              <a href="services.html#web-development" class="list-group-item list-group-item-action">Web Development</a>
-              <a href="services.html#digital-solutions" class="list-group-item list-group-item-action">Digital Solutions</a>
-              <a href="services.html#product-engineering" class="list-group-item list-group-item-action">Product Engineering</a>
-              <a href="services.html#ui-ux-strategy" class="list-group-item list-group-item-action">UI/UX Strategy</a>
+              <a href="#it-consultancy" class="list-group-item list-group-item-action">IT Consultancy</a>
+              <a href="#web-development" class="list-group-item list-group-item-action">Web Development</a>
+              <a href="#digital-solutions" class="list-group-item list-group-item-action">Digital Solutions</a>
+              <a href="#product-engineering" class="list-group-item list-group-item-action">Product Engineering</a>
+              <a href="#ui-ux-strategy" class="list-group-item list-group-item-action">UI/UX Strategy</a>
             </div>
           </nav>
 
           <!-- Contact Form -->
           <section aria-label="Quick Contact Form" class="mb-4">
-            <h2 class="h5 fw-bold mb-3">Contact Us</h2>
-            <form>
+            <h2 class="h5 fw-bold mb-3 text-primary">Contact Us</h2>
+            <form method="POST" action="/save-contact.php">
               <div class="mb-3">
-                <label for="email" class="form-label visually-hidden">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+                <label for="mobile_no" class="form-label ">Mobile No.</label>
+                <input type="tel" class="form-control" name="mobile_no" placeholder="Mobile No." required>
               </div>
               <div class="mb-3">
-                <label for="message" class="form-label visually-hidden">Your message</label>
-                <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                <label for="email" class="form-label ">Email address</label>
+                <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label ">Your message</label>
+                <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
               </div>
               <button type="submit" class="btn btn-primary w-100">
-                Send Message <i class="fas fa-arrow-right ms-2"></i>
+                Send Message <i class="fas fa-paper-plane ms-2"></i>
               </button>
             </form>
           </section>
-
         </div>
       </aside>
 
       <!-- Main Content -->
       <article class="col-lg-7 offset-lg-1 col-xl-7 order-1 order-lg-2">
         <div class="bg-white p-4 rounded shadow-sm">
-          <img src="/static/images/service-details-content.jpg" class="img-fluid rounded mb-4" alt="End-to-end software development services at IT Softech">
+          <img src="/static/images/service-details-content.jpg" class="img-fluid rounded mb-4" alt="IT Softech Services">
 
           <header class="mb-4">
-            <h1 class="fw-bold h2">End-to-End IT Development Services</h1>
+            <h1 class="fw-bold h2 text-primary">End-to-End IT Development Services</h1>
             <p class="text-muted">Transform your business with tailored IT solutions — from concept to deployment.</p>
           </header>
 
           <section class="mb-4" id="strategic-planning">
             <h2 class="h4 fw-semibold">User Flow & Strategic Planning</h2>
             <p>
-              We begin every project by understanding your users, goals, and workflows. Our approach ensures your systems are user-centric and built to scale. Each touchpoint is optimized to enhance engagement and reduce operational friction.
+              We begin every project by understanding your users, goals, and workflows. Our approach ensures your systems are user-centric and built to scale.
             </p>
           </section>
 
-          <section class="mb-4">
+          <section class="mb-4" id="it-consultancy">
             <h3 class="h5 fw-bold">Our Core Services</h3>
             <ul class="list-group list-group-flush mb-4">
               <li class="list-group-item">Custom Web & Mobile Development</li>
@@ -82,11 +107,9 @@
           </section>
 
           <section class="mb-4">
-            <h2 class="h5 fw-bold">
-              IT Consulting that Delivers Results
-            </h2>
+            <h2 class="h5 fw-bold" id="digital-solutions">IT Consulting that Delivers Results</h2>
             <p>
-              From fintech to healthcare, our cross-industry experience allows us to create solutions that not only meet but exceed business expectations. IT Softech blends technology with business strategy to accelerate growth and streamline operations.
+              From fintech to healthcare, our cross-industry experience allows us to create solutions that exceed expectations. IT Softech blends technology with business strategy to accelerate your growth.
             </p>
           </section>
         </div>

@@ -1,6 +1,7 @@
 {% extends "baseLayout.html" %}
 
 {% block title %}About - IT Softech{% endblock %}
+
 {% block head_part %}
   <!-- Meta Description for SEO -->
   <meta name="description" content="IT Softech offers scalable software development, cybersecurity, and cloud services to help businesses grow through digital transformation.">
@@ -10,42 +11,96 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="/about" />
-
 {% endblock head_part %}
+
 {% block content %}
 <main>
-<section class="container my-5">
-  <div class="row align-items-center g-5">
-    <!-- Text Section -->
-    <div class="col-md-6">
-      <p class="text-uppercase text-primary fw-bold mb-2">About Company</p>
-      <h2 class="fw-bold display-6 mb-4">
-        IT Softech – Your Partner in Digital Transformation
-      </h2>
-      <p class="text-muted mb-4">
+  <!-- About Section -->
+  <section class="container my-5">
+    <div class="row align-items-center g-5">
+      <!-- Text Section -->
+      <div class="col-md-6">
+        <p class="text-uppercase text-primary fw-bold mb-2">About Company</p>
+        <h2 class="fw-bold display-6 mb-4">IT Softech – Your Partner in Digital Transformation</h2>
+        <p class="text-muted mb-4">
           At IT Softech, we specialize in building smart, scalable, and secure IT solutions.
-  Whether you're a startup or an enterprise, we bring expert-level software development,
-  cybersecurity, and cloud deployment services to accelerate your business.
-      </p>
+          Whether you're a startup or an enterprise, we bring expert-level software development,
+          cybersecurity, and cloud deployment services to accelerate your business growth.
+        </p>
 
-      <!-- Card -->
-      <div class="p-3 border rounded-4 d-flex align-items-start gap-3 bg-white shadow-sm">
-        <i class="bi bi-people-fill text-primary fs-2"></i>
-       <!-- <div>
-         <h5 class="fw-bold mb-1">Professionaol Consultants</h5>
-          <p class="mb-0 text-muted small">
-            Quis autem vel eum iure reprehenderit quin voluptate velit esse quam
-          </p>
-        
-        </div>-->
+        <!-- Highlights Card -->
+        <div class="p-3 border rounded-4 d-flex align-items-start gap-3 bg-white shadow-sm">
+          <i class="bi bi-people-fill text-primary fs-2"></i>
+          <div>
+            <h5 class="fw-bold mb-1">Professional Consultants</h5>
+            <p class="mb-0 text-muted small">
+              Our expert team ensures tailored strategies, robust security, and scalable solutions that fit your business perfectly.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="col-md-6 text-center">
+        <img src="/static/images/about_us.jpg" alt="Consultants" class="img-fluid rounded-4 shadow-sm" />
       </div>
     </div>
+  </section>
 
-    <!-- Image Section -->
-    <div class="col-md-6 text-center">
-      <img src="/static/images/about_us.jpg" alt="Consultants" class="img-fluid rounded-4 shadow-sm" />
+  <!-- Mission & Vision Section -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-6 mb-4">
+          <h4 class="fw-bold text-primary mb-3">Our Mission</h4>
+          <p class="text-muted">
+            To empower businesses through innovative, secure, and scalable IT solutions that drive digital transformation and long-term success.
+          </p>
+        </div>
+        <div class="col-md-6 mb-4">
+          <h4 class="fw-bold text-primary mb-3">Our Vision</h4>
+          <p class="text-muted">
+            To be a trusted global leader in IT services, known for integrity, innovation, and customer satisfaction.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Company Values Section -->
+  <section class="container my-5">
+    <h3 class="fw-bold text-center mb-4">Core Values That Define Us</h3>
+    <div class="row text-center">
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-lightbulb-fill fs-1 text-warning"></i>
+        <h6 class="fw-bold mt-3">Innovation</h6>
+        <p class="small text-muted">Always evolving with the latest technologies to stay ahead.</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-shield-lock-fill fs-1 text-danger"></i>
+        <h6 class="fw-bold mt-3">Security</h6>
+        <p class="small text-muted">Your data and infrastructure are protected with enterprise-grade solutions.</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-people-fill fs-1 text-success"></i>
+        <h6 class="fw-bold mt-3">Collaboration</h6>
+        <p class="small text-muted">We work closely with our clients as partners, not vendors.</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-award-fill fs-1 text-primary"></i>
+        <h6 class="fw-bold mt-3">Excellence</h6>
+        <p class="small text-muted">Delivering high-quality solutions that exceed expectations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-primary text-white py-5 text-center">
+    <div class="container">
+      <h4 class="fw-bold mb-3">Ready to Elevate Your Digital Game?</h4>
+      <p class="mb-4">Let’s collaborate to craft impactful solutions for your business.</p>
+      <a href="/contact" class="btn btn-light btn-lg px-4">Contact Us</a>
+    </div>
+  </section>
 </main>
 {% endblock %}
