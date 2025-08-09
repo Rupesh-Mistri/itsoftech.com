@@ -1,503 +1,1249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Best IT Services | Web Development, App Solutions - IT Softech</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Softech - Premium Software Development Solutions</title>
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="IT Softech - Website, Web App & Mobile App Development" />
-  <meta name="description" content="IT Softech offers top-tier web development, app development, and digital marketing services to help businesses grow online efficiently." />
-  <meta name="keywords" content="web development, app development, mobile app, digital marketing, Ranchi, IT company, IT Softech" />
-  <meta name="author" content="IT Softech" />
-  <meta name="robots" content="index, follow" />
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #0F172A;
+            background: #0F172A;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.itsoftech.com/" />
-  <meta property="og:title" content="IT Softech - Website & App Development Company" />
-  <meta property="og:description" content="Grow your online business with IT Softech's expert web and mobile app development solutions." />
-  <meta property="og:image" content="/static/images/logo2.png" />
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content="IT Softech - Web, App & Digital Services" />
-  <meta property="twitter:description" content="IT Softech is a creative digital company providing web/app development and strategic marketing." />
-  <meta property="twitter:image" content="/static/images/logo2.png" />
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 25%, #334155 50%, #475569 75%, #64748B 100%);
+        }
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.itsoftech.com/" />
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 90% 90%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+            animation: morphing 20s ease-in-out infinite;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "IT Softech",
-  "url": "https://www.itsoftech.com",
-  "logo": "https://www.itsoftech.com/static/images/logo2.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-7654994344",
-    "contactType": "Customer Service",
-    "areaServed": "IN",
-    "availableLanguage": "en"
-  },
-  "sameAs": [
-    "https://www.facebook.com/itsoftech",
-    "https://www.instagram.com/itsoftech",
-    "https://www.linkedin.com/company/itsoftech"
-  ]
-}
-</script>
+        @keyframes morphing {
+            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            25% { transform: translate(-20px, -10px) scale(1.1) rotate(1deg); }
+            50% { transform: translate(20px, 10px) scale(0.9) rotate(-1deg); }
+            75% { transform: translate(-10px, 20px) scale(1.05) rotate(0.5deg); }
+        }
 
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, #38BDF8, #8B5CF6);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float-particle 15s linear infinite;
+        }
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) scale(0);
+                opacity: 0;
+            }
+        }
 
-  <link rel="stylesheet" href="/static/style.css" />
-  
-<!-- Essential Meta Tags -->
-<meta name="description" content="IT Softech offers innovative IT consultancy, web development, cybersecurity, and digital transformation services tailored to help your business grow." />
-<meta name="keywords" content="IT consultancy, web development, mobile app, digital marketing, Ranchi IT services, cybersecurity, UI/UX design" />
-<meta name="author" content="IT Softech" />
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-<!-- Open Graph Tags for Social Sharing -->
-<meta property="og:title" content="IT Softech - IT Services & Digital Solutions in Ranchi" />
-<meta property="og:description" content="Get reliable web, app development, and IT consultancy services. Scalable digital solutions for modern businesses." />
-<meta property="og:image" content="/static/images/hero-img.png" />
-<meta property="og:url" content="https://www.itsoftech.com/" />
-<meta property="og:type" content="website" />
+        header.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="IT Softech - Your Digital Growth Partner" />
-<meta name="twitter:description" content="Explore our web development, mobile apps, and IT services tailored for startups and enterprises." />
-<meta name="twitter:image" content="/static/images/hero-img.png" />
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
 
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
+        .logo:hover {
+            transform: scale(1.05);
+        }
 
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            animation: logo-glow 3s ease-in-out infinite;
+        }
 
-  <!-- Internal Styles -->
-  <style>
-    .card {
-      background-color: #5b50ba;
-      border: none;
-      border-radius: 15px;
-      padding: 20px;
-      transition: all 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
-    .card img {
-      max-height: 200px;
-      object-fit: contain;
-      margin-bottom: 20px;
-    }
-    .card-title {
-      font-weight: 600;
-      font-size: 20px;
-    }
-    .card-text {
-      color: #bcbac2;
-      margin-bottom: 20px;
-    }
-    .learn-more {
-      color: #fff;
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .learn-more:hover {
-      text-decoration: underline;
-    }
-    .custom-hero-img {
-      max-height: 500px;
-      object-fit: contain;
-    }
-    .carousel-item {
-      margin-top: 2px;
-    }
-  </style>
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: logo-shine 3s ease-in-out infinite;
+        }
+
+        .logo-icon img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+     
+
+        .logo-company {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFFFFF, #38BDF8, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: #94A3B8;
+            font-weight: 400;
+            margin-top: -4px;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes logo-glow {
+            0%, 100% { 
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+                border-color: rgba(56, 189, 248, 0.2);
+            }
+            50% { 
+                box-shadow: 0 12px 40px rgba(56, 189, 248, 0.3);
+                border-color: rgba(139, 92, 246, 0.4);
+            }
+        }
+
+        @keyframes logo-shine {
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
+        }
+
+        .logo-icon:hover {
+            animation-play-state: paused;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(56, 189, 248, 0.4);
+            border-color: rgba(56, 189, 248, 0.6);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #CBD5E1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #38BDF8;
+            background: rgba(56, 189, 248, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 2px;
+            left: 16px;
+            background: linear-gradient(90deg, #38BDF8, #8B5CF6);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover::after {
+            width: calc(100% - 32px);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #38BDF8, #8B5CF6);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #FFFFFF, #38BDF8, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInUp 1s cubic-bezier(0.4, 0, 0.2, 1);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            color: #CBD5E1;
+            animation: slideInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #38BDF8, #8B5CF6);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-secondary {
+            background: rgba(203, 213, 225, 0.1);
+            color: white;
+            padding: 16px 32px;
+            border: 2px solid rgba(56, 189, 248, 0.5);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(56, 189, 248, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.5), transparent);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #0F172A, #38BDF8, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #64748B;
+            margin-bottom: 4rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #38BDF8, #8B5CF6, #EC4899);
+            transform: scaleX(0);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: 50%;
+            transform: translateY(-50%);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover::after {
+            right: -20px;
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(56, 189, 248, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #38BDF8, #8B5CF6);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotate(10deg) scale(1.1);
+            box-shadow: 0 12px 35px rgba(56, 189, 248, 0.4);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #0F172A;
+        }
+
+        .service-card p {
+            color: #64748B;
+            line-height: 1.7;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: #0F172A;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(139, 92, 246, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-item:hover::before {
+            opacity: 1;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            border-color: rgba(56, 189, 248, 0.5);
+            box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: bounce 2s ease-in-out infinite;
+            position: relative;
+            z-index: 3;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .feature-item h3 {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .feature-item p {
+            color: #CBD5E1;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            position: relative;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #0F172A, #38BDF8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-info p {
+            color: #64748B;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.1);
+        }
+
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #38BDF8, #8B5CF6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #38BDF8, #8B5CF6, #EC4899);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: #0F172A;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            background: #F8FAFC;
+            color: #0F172A;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #38BDF8;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #94A3B8;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #38BDF8, #8B5CF6);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #0F172A;
+            color: #CBD5E1;
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top" style="background-color: #75767b;">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="/">
-        <img src="/static/images/logo2.png" alt="IT Softech Logo" width="80" height="80" />
-        IT Softech
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav me-3">
-          <li class="nav-item"><a class="nav-link fw-semibold" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="/about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="/services">Services</a></li>
-      
-      
-          <li class="nav-item"><a class="nav-link fw-semibold" href="/blog">Blog</a></li>
-        </ul>
-        <a href="https://api.whatsapp.com/send?phone=917654994344&text=Hello%20I%20want%20IT%20service" target="_blank" class="btn btn-primary fw-bold">CONSULTANCY</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  
-<main>
-<!-- Hero Section -->
-<section id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-inner">
-
-    <!-- Slide 1 -->
-    <div class="carousel-item active">
-      <div class="d-flex align-items-center bg-light">
-        <div class="container">
-          <div class="row align-items-center">
-            <!-- Text -->
-            <div class="col-md-6 text-dark text-center text-md-start">
-              <h1 class="display-4 fw-bold">
-                Solutions <br><span class="text-primary">Related To IT</span>
-              </h1>
-              <div class="mt-4">
-                <a href="javascript:void(0)" class="btn btn-primary me-2">SERVICE WE PROVIDE</a>
-                <a href="javascript:void(0)" class="btn btn-outline-primary">LEARN MORE</a>
-              </div>
-            </div>
-
-            <!-- Image -->
-            <div class="col-md-6 text-center mt-2">
-              <img src="/static/images/hero-img.png" alt="IT services company Ranchi web development" class="img-fluid custom-hero-img">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="carousel-item">
-      <div class="d-flex align-items-center  bg-light">
-        <div class="container">
-          <div class="row align-items-center">
-            <!-- Text -->
-            <div class="col-md-6 text-dark text-center text-md-start">
-              <h1 class="display-4 fw-bold">
-                Empowering <br><span class="text-primary">Digital Transformation</span>
-              </h1>
-              <div class="mt-4">
-                <a href="javascript:void(0)" class="btn btn-primary me-2">OUR SOLUTIONS</a>
-                <a href="javascript:void(0)" class="btn btn-outline-primary">DISCOVER</a>
-              </div>
-            </div>
-
-            <!-- Image -->
-            <div class="col-md-6 text-center mt-2">
-              <img src="/static/images/hero-img2.png" alt="Digital Transformation" loading="lazy" class="img-fluid custom-hero-img">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Controls -->
-  <button class="carousel-control-prev" type="button" aria-label="Previous slide" data-bs-target="#heroCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" aria-label="Next slide" data-bs-target="#heroCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</section>
-
-
-
-
-
-
-<!-- Services Section -->
-   <div class="text-center mt-5">
-    <h2 class="fw-bold">Services</h2>
-  </div>
-<section class="container my-5">
-  <div class="row g-4 align-items-center">
-    <!-- Profile Image -->
-    <div class="col-md-5">
-      <img src="/static/images/feature_img.jpg" alt="Profile" class="img-fluid rounded-4 shadow-sm" />
-    </div>
-
-    <!-- Services Grid -->
-    <div class="col-md-7">
-      <div class="row g-3">
-        <!-- IT Consultancy -->
-<div class="col-sm-6">
-  <div class="p-3 bg-white rounded shadow-sm h-100">
-    <div class="d-flex align-items-start gap-2">
-      <i class="bi bi-graph-up-arrow text-primary fs-2"></i>
-      <div>
-        <h6 class="fw-bold mb-1">IT Consultancy</h6>
-        <p class="mb-0 text-muted small">
-          We help businesses align their technology strategy with their goals. 
-          Our consultancy services offer expert guidance on IT infrastructure, 
-          system integration, and digital transformation—ensuring smarter and faster decision-making.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Web Design-->
-<div class="col-sm-6">
-  <div class="p-3 bg-white rounded shadow-sm h-100">
-    <div class="d-flex align-items-start gap-2">
-      <i class="bi bi-unlock text-primary fs-2"></i>
-      <div>
-        <h6 class="fw-bold mb-1">Web Design</h6>
-        <p class="mb-0 text-muted small">
-          We craft responsive, user-friendly websites that reflect your brand identity and drive engagement. 
-          From layout to aesthetics, our web designs ensure seamless performance across all devices.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Development -->
-<div class="col-sm-6">
-  <div class="p-3 bg-white rounded shadow-sm h-100">
-    <div class="d-flex align-items-start gap-2">
-      <i class="bi bi-phone text-primary fs-2"></i>
-      <div>
-        <h6 class="fw-bold mb-1">Development</h6>
-        <p class="mb-0 text-muted small">
-          Whether it’s a web app, mobile app, or custom software, our development team builds scalable 
-          and secure digital products that meet your unique business requirements.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- UX/UI Strategy -->
-<div class="col-sm-6">
-  <div class="p-3 bg-white rounded shadow-sm h-100">
-    <div class="d-flex align-items-start gap-2">
-      <i class="bi bi-controller text-primary fs-2"></i>
-      <div>
-        <h6 class="fw-bold mb-1">UX/UI Strategy</h6>
-        <p class="mb-0 text-muted small">
-          We design intuitive user experiences and sleek user interfaces. 
-          Our UX/UI strategy is focused on increasing user satisfaction and improving digital product usability 
-          through research and design best practices.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Mobile App -->
-<div class="col-sm-6">
-  <div class="p-3 bg-white rounded shadow-sm h-100">
-    <div class="d-flex align-items-start gap-2">
-      <i class="bi bi-phone text-primary fs-2"></i> <!-- Updated icon -->
-      <div>
-        <h6 class="fw-bold mb-1">Mobile App</h6>
-        <p class="mb-0 text-muted small">
-          We build high-performance mobile applications for mobiles, tailored to your business needs. 
-          Our apps offer smooth user experiences, robust functionality, and modern design to keep users engaged.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Server Related Support -->
-<div class="col-sm-6">
-  <div class="p-3 bg-white rounded shadow-sm h-100">
-    <div class="d-flex align-items-start gap-2">
-      <i class="bi bi-hdd-network text-primary fs-2"></i> <!-- More relevant icon -->
-      <div>
-        <h6 class="fw-bold mb-1">Server Related Support</h6>
-        <p class="mb-0 text-muted small">
-          We offer reliable server setup, monitoring, and maintenance solutions. 
-          Our team ensures optimal server performance, uptime, and security—whether you're on cloud, VPS, or dedicated hosting.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-        <!-- Blue CTA -->
-       <!-- <div class="col-12">
-          <div class="p-4 rounded-3 text-white text-center" style="background: #0d6efd;">
-            <p class="mb-0 fw-semibold fs-5">
-              Sed perspiciatis unde omnis iste natus error voluptatem accusantium
-              doloremque laudantium totam rem aperiam eaque quae
-            </p>
-          </div>
-        </div>-->
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Professional Services Start -->
-<div class="container py-2">
-  <div class="text-center mb-5">
-    <h2 class="fw-bold">Our Professional Solutions <br> For IT Businesses</h2>
-  </div>
-
-  <div class="row g-4">
-    <div class="col-md-3">
-      <div class="card text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/1164/1164724.png" class="mx-auto" alt="Manage IT Services">
-        <h5 class="card-title">Manage IT Services</h5>
-        <p class="card-text">We offer IT service management for your business operations.</p>
-        <a href="javascript:void(0)" class="learn-more">Learn More →</a>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/3785/3785411.png" class="mx-auto" alt="Product Engineering">
-        <h5 class="card-title">Product Engineering</h5>
-        <p class="card-text">Innovative product development to transform your ideas into reality.</p>
-        <a href="javascript:void(0)" class="learn-more">Learn More →</a>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/4324/4324502.png" class="mx-auto" alt="Web Development">
-        <h5 class="card-title">Web Development</h5>
-        <p class="card-text">Custom web development solutions to help your business grow online.</p>
-        <a href="javascript:void(0)" class="learn-more">Learn More →</a>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/2267/2267373.png" class="mx-auto" alt="Digital Solutions">
-        <h5 class="card-title">Digital Solutions</h5>
-        <p class="card-text">Complete digital solutions to streamline your business processes.</p>
-        <a href="javascript:void(0)" class="learn-more">Learn More →</a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Professional Services End -->
-
-<!-- Our Team Section Start -->
-<div class="container py-1">
-  <div class="text-center mb-5">
-    <h2 class="fw-bold">Meet Our Team</h2>
-  </div>
-
-  <div class="row g-2">
-    <div class="col-md-6">
-      <div class="card text-center">
-        <img src="/static/images/avtar1.jpg" class="rounded-circle mx-auto mt-4" alt="Team Member 1" width="120" height="120">
-        <div class="card-body">
-          <h5 class="card-title">Rupesh Kumar Mistri</h5>
-          <p class="card-text text-white">Full Stack Developer</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card text-center">
-        <img src="/static/images/avtar2.jpg" class="rounded-circle mx-auto mt-4" alt="Team Member 2" width="120" height="120">
-        <div class="card-body">
-          <h5 class="card-title">Anand Kumar Pandey</h5>
-          <p class="card-text text-white">Business Development Executive</p>
-        </div>
-      </div>
-    </div>
-   
+    <div class="bg-animation"></div>
     
-  </div>
-  <div class="text-center mt-2">
-    <h5 >And Other Members will be updated soon</h5>
-    </div>
-</div>
-<!-- Our Team Section End -->
-</main>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <img src="/static/images/logo2.png" alt="IT Softech Logo" width="50" height="50" />
+                </div>
+                <div>
+                    <div class="logo-company">IT Softech</div>
+                    <div class="logo-tagline">Digital Innovation</div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#features">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta-button" onclick="scrollToSection('contact')">Get Quote</button>
+        </nav>
+    </header>
 
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Transform Your Vision Into Digital Excellence</h1>
+                <p>Cutting-edge software development services that propel your business into the future with innovative solutions and exceptional user experiences</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('services')">Explore Services</button>
+                    <button class="btn-secondary" onclick="scrollToSection('contact')">Start Your Project</button>
+                </div>
+            </div>
+        </section>
 
- <!-- Footer -->
-<footer class="bg-light text-dark border-top pt-5">
-  <div class="container">
-    <div class="row gy-4">
-      <!-- About Section -->
-      <div class="col-md-4">
-        <h6 class="fw-bold mb-3 text-primary">About IT Softech</h6>
-        <p>
-          IT Softech is a client-focused company delivering creative websites, web & mobile apps, and strategic digital marketing—ideal for businesses looking to launch or scale their online presence.
-        </p>
-      </div>
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title fade-in">Our Premium Services</h2>
+                <p class="section-subtitle fade-in">Comprehensive digital solutions crafted with precision and innovation</p>
+                <div class="services-grid">
+                    <div class="service-card scale-in">
+                        <div class="service-icon">🎨</div>
+                        <h3>Modern Web Design</h3>
+                        <p>Stunning, conversion-optimized designs that captivate audiences and drive engagement. Our creative team delivers pixel-perfect interfaces that tell your brand story.</p>
+                    </div>
+                    <div class="service-card scale-in">
+                        <div class="service-icon">🚀</div>
+                        <h3>Website Development</h3>
+                        <p>Lightning-fast, scalable websites built with cutting-edge technologies. From elegant portfolios to robust e-commerce platforms, we deliver digital excellence.</p>
+                    </div>
+                    <div class="service-card scale-in">
+                        <div class="service-icon">⚡</div>
+                        <h3>Web Applications</h3>
+                        <p>Powerful, cloud-ready web applications that transform business operations. Built for scale, security, and seamless user experiences across all devices.</p>
+                    </div>
+                    <div class="service-card scale-in">
+                        <div class="service-icon">📱</div>
+                        <h3>Mobile Apps</h3>
+                        <p>Native and cross-platform mobile solutions that engage users and drive growth. iOS and Android apps with stunning UI/UX and robust functionality.</p>
+                    </div>
+                    <div class="service-card scale-in">
+                        <div class="service-icon">🛠️</div>
+                        <h3>Custom Software</h3>
+                        <p>Bespoke software solutions engineered for your unique business needs. From enterprise systems to specialized tools, we build what others can't.</p>
+                    </div>
+                    <div class="service-card scale-in">
+                        <div class="service-icon">🔧</div>
+                        <h3>Technical Support</h3>
+                        <p>24/7 comprehensive support and maintenance services. Keep your digital assets performing optimally with our expert technical team backing you up.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <!-- Company Links -->
-      <div class="col-md-4">
-        <h6 class="fw-bold mb-3 text-primary">Company</h6>
-        <ul class="list-unstyled">
-          <li><a href="/about" class="text-decoration-none text-dark d-block mb-2">➤ About Us</a></li>
-          <li><a href="/blog" class="text-decoration-none text-dark d-block mb-2">➤ Blog Post</a></li>
-        </ul>
-      </div>
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title fade-in" style="color: white;">Why Choose IT Softech?</h2>
+                <p class="section-subtitle fade-in" style="color: #CBD5E1;">Industry-leading expertise meets innovative solutions</p>
+                <div class="features-grid">
+                    <div class="feature-item slide-in-left">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Lightning Fast Delivery</h3>
+                        <p>Rapid development cycles without compromising on quality or attention to detail</p>
+                    </div>
+                    <div class="feature-item slide-in-left">
+                        <div class="feature-icon">💎</div>
+                        <h3>Premium Quality</h3>
+                        <p>Enterprise-grade code standards and cutting-edge design methodologies</p>
+                    </div>
+                    <div class="feature-item slide-in-right">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Fort Knox Security</h3>
+                        <p>Military-grade security protocols and industry-standard compliance</p>
+                    </div>
+                    <div class="feature-item slide-in-right">
+                        <div class="feature-icon">📈</div>
+                        <h3>Infinitely Scalable</h3>
+                        <p>Future-proof architectures that grow seamlessly with your business ambitions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <!-- Contact Info -->
-      <div class="col-md-4">
-        <h6 class="fw-bold mb-3 text-primary">Contact Us</h6>
-        <p class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-success"></i>Near Shri Krishana Nursing Home, Booty Basti, Ranchi, Jharkhand</p>
-        <p class="mb-2"><i class="bi bi-envelope-fill me-2 text-success"></i><a href="mailto:info@itsoftech.com" class="text-decoration-none text-dark">info@itsoftech.com</a></p>
-        <p><i class="bi bi-telephone-fill me-2 text-success"></i><a href="tel:7654994344" class="text-decoration-none text-dark">7654994344</a></p>
-      </div>
-    </div>
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title fade-in">Let's Build Something Amazing Together</h2>
+                <p class="section-subtitle fade-in">Ready to transform your ideas into digital reality?</p>
+                <div class="contact-content">
+                    <div class="contact-info slide-in-left">
+                        <h3>Get In Touch</h3>
+                        <p>Partner with us to create exceptional digital experiences that drive results and exceed expectations. Our expert team is ready to bring your vision to life.</p>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@itsoftech.com" style="text-decoration:none" >info@itsoftech.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📞</div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:7654994344" style="text-decoration:none" >7654994344</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📍</div>
+                            <div>
+                                <h4>Office</h4>
+                                <p>Near Shri Krishana Nursing Home, Booty Basti, Ranchi, Jharkhand</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form slide-in-right" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Mobile No.</label>
+                            <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter Mobile No." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="Modern Web Design">Modern Web Design</option>
+                                <option value="Website Development">Website Development</option>
+                                <option value="Web Application">Web Application</option>
+                                <option value="Mobile App Development">Mobile App Development</option>
+                                <option value="Custom Software">Custom Software</option>
+                                <option value="Technical Support">Technical Support</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project vision, goals, and requirements..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- Divider -->
-    <hr class="my-4">
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 IT Softech. All rights reserved. | Crafting Digital Excellence Since Day One</p>
+        </div>
+    </footer>
 
-    <!-- Bottom Row -->
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center">
-      <p class="mb-0 ">© 2025 <strong class="text-primary">itsoftech.com</strong>. All Rights Reserved.</p>
-      <!-- Social Icons (Optional) -->
-      <div class="mt-2 mt-md-0 mb-2">
-        <a href="#" class="text-dark me-3"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="text-dark me-3"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="text-dark"><i class="bi bi-linkedin"></i></a>
-      </div>
-    </div>
-  </div>
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particleCount = 20;
+            for (let i = 0; i < particleCount; i++) {
+                createParticle();
+            }
+        }
 
-  <!-- Back To Top Button -->
-  <div class="position-fixed bottom-0 end-0 m-4">
-    <button 
-      class="btn btn-success shadow rounded-circle d-flex align-items-center justify-content-center" 
-      style="width: 50px; height: 50px;" 
-      onclick="gototop()" 
-      aria-label="Back to Top"
-    >
-      <i class="bi bi-arrow-up"></i>
-    </button>
-  </div>
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            document.body.appendChild(particle);
 
-  <script>
-    function gototop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  </script>
-</footer>
+            // Remove particle after animation
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.parentNode.removeChild(particle);
+                    createParticle(); // Create a new one
+                }
+            }, 25000);
+        }
 
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/static/script.js"></script>
+        // Advanced scroll animations
+        function checkScroll() {
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+            elements.forEach((element, index) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, index * 100); // Stagger animations
+                }
+            });
+        }
+
+        // Enhanced header scroll effect
+        function handleScroll() {
+            const header = document.querySelector('header');
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Parallax effect for hero
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const heroHeight = hero.offsetHeight;
+                const scrolled = Math.min(scrollY / heroHeight, 1);
+                hero.style.transform = `translateY(${scrolled * 50}px)`;
+                hero.style.opacity = 1 - scrolled * 0.3;
+            }
+            
+            checkScroll();
+        }
+
+        // Enhanced form submission with animation
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Animate button
+            submitBtn.textContent = 'Sending...';
+            submitBtn.style.transform = 'scale(0.95)';
+            submitBtn.style.opacity = '0.7';
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const service = formData.get('service');
+            const message = formData.get('message');
+            
+            // Simulate form submission
+            setTimeout(() => {
+                submitBtn.textContent = '✓ Message Sent!';
+                submitBtn.style.background = 'linear-gradient(135deg, #22C55E, #16A34A)';
+                submitBtn.style.transform = 'scale(1)';
+                submitBtn.style.opacity = '1';
+                
+                alert(`Thank you, ${name}! 🎉\n\nWe've received your inquiry about ${service || 'our services'}.\nOur team will contact you at ${email} within 24 hours to discuss your project.\n\nGet ready for something amazing!`);
+                
+                // Reset form after delay
+                setTimeout(() => {
+                    event.target.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = 'linear-gradient(135deg, #38BDF8, #8B5CF6)';
+                }, 2000);
+            }, 1500);
+        }
+
+        // Smooth reveal animations on load
+        function initAnimations() {
+            // Animate service cards with stagger
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                    card.style.opacity = '1';
+                }, index * 200);
+            });
+        }
+
+        // Enhanced mouse parallax effect
+        function initParallax() {
+            document.addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+                
+                // Parallax for service icons
+                const icons = document.querySelectorAll('.service-icon');
+                icons.forEach(icon => {
+                    const speed = 2;
+                    const x = (mouseX - 0.5) * speed;
+                    const y = (mouseY - 0.5) * speed;
+                    icon.style.transform = `translate(${x}px, ${y}px) rotate(${x}deg)`;
+                });
+
+                // Parallax for feature icons
+                const featureIcons = document.querySelectorAll('.feature-icon');
+                featureIcons.forEach(icon => {
+                    const speed = 1.5;
+                    const x = (mouseX - 0.5) * speed;
+                    const y = (mouseY - 0.5) * speed;
+                    icon.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            });
+        }
+
+        // Event listeners
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', () => {
+            checkScroll();
+            createParticles();
+            initAnimations();
+            initParallax();
+        });
+
+        // Initialize animations on DOM load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkScroll();
+            
+            // Add entrance animations to hero elements
+            setTimeout(() => {
+                document.querySelector('.hero h1').style.opacity = '1';
+                document.querySelector('.hero h1').style.transform = 'translateY(0)';
+            }, 300);
+            
+            setTimeout(() => {
+                document.querySelector('.hero p').style.opacity = '1';
+                document.querySelector('.hero p').style.transform = 'translateY(0)';
+            }, 600);
+            
+            setTimeout(() => {
+                document.querySelector('.hero-buttons').style.opacity = '1';
+                document.querySelector('.hero-buttons').style.transform = 'translateY(0)';
+            }, 900);
+        });
+
+        // Add click ripple effect to buttons
+        function addRippleEffect() {
+            const buttons = document.querySelectorAll('button, .btn-primary, .btn-secondary');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: rgba(255, 255, 255, 0.3);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s ease-out;
+                        pointer-events: none;
+                    `;
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        }
+
+        // Add ripple animation styles
+        const rippleStyles = document.createElement('style');
+        rippleStyles.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(rippleStyles);
+
+        // Initialize ripple effects
+        addRippleEffect();
+
+        // Enhanced typing effect for hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.textContent = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
+        // Initialize enhanced effects
+        setTimeout(() => {
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle) {
+                const originalText = heroTitle.textContent;
+                typeWriter(heroTitle, originalText, 50);
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
