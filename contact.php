@@ -28,13 +28,13 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit();
 }
 
-$sql = "INSERT INTO tbl_contact_messages (name, mobile_no, email,service, message, created_at) VALUES (?, ?, ?, NOW())";
+$sql = "INSERT INTO tbl_contact_messages (name, mobile_no, email, service, message, created_at) VALUES (?, ?, ?, ?, ?, NOW())";
 $stmt = $conn->prepare($sql);
 if ($stmt === false) {
     echo json_encode(["success" => false, "message" => "Prepare failed: " . $conn->error]);
     exit();
 }
-$stmt->bind_param("sss", $mobile, $email, $message);
+$stmt->bind_param("sssss", $name, $mobile, $email, $service, $message);
 $stmt->execute();
 $stmt->close();
 
