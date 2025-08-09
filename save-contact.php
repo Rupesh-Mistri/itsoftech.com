@@ -20,6 +20,7 @@ if ($conn->connect_error) {
 $name = htmlspecialchars($_POST['name'] ?? '');
 $mobile = htmlspecialchars($_POST['mobile_no'] ?? '');
 $email = htmlspecialchars($_POST['email'] ?? '');
+$service = htmlspecialchars($_POST['service'] ?? '');
 $message = htmlspecialchars($_POST['message'] ?? '');
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -27,7 +28,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit();
 }
 
-$sql = "INSERT INTO tbl_contact_messages (name, mobile_no, email, message, created_at) VALUES (?, ?, ?, NOW())";
+$sql = "INSERT INTO tbl_contact_messages (name, mobile_no, email,service, message, created_at) VALUES (?, ?, ?, NOW())";
 $stmt = $conn->prepare($sql);
 if ($stmt === false) {
     echo json_encode(["success" => false, "message" => "Prepare failed: " . $conn->error]);
