@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Softech Business Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card-container {
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .business-card {
+            width: 350px;
+            height: 210px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+       
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .card-back {
+            transform: rotateY(0deg);
+        }
+
+        /* Front Side */
+        .card-front {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 25%, #334155 50%, #475569 75%, #64748B 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-front::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+            animation: subtle-morph 15s ease-in-out infinite;
+        }
+
+        @keyframes subtle-morph {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5px, -5px) scale(1.02); }
+        }
+
+        .front-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-icon::before {
+            content: 'ITS';
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .company-info h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFFFFF, #38BDF8, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            color: #94A3B8;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .services-preview {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .service-tag {
+            background: rgba(56, 189, 248, 0.2);
+            color: #38BDF8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .decorative-element {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: 50%;
+            filter: blur(20px);
+        }
+
+        /* Back Side */
+        .card-back {
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            position: relative;
+        }
+
+        .back-content {
+            height: 100%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .person-info {
+            margin-bottom: 20px;
+        }
+
+        .person-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 4px;
+        }
+
+        .person-title {
+            font-size: 0.9rem;
+            color: #64748B;
+            font-weight: 500;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #38BDF8, #8B5CF6);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 0.7rem;
+        }
+
+        .qr-section {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .qr-placeholder {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0F172A, #38BDF8);
+            border-radius: 8px;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .qr-text {
+            font-size: 0.7rem;
+            color: #64748B;
+        }
+
+        .back-decorative {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.05), rgba(139, 92, 246, 0.05));
+            border-radius: 50%;
+            filter: blur(30px);
+        }
+
+        /* Multiple Card Layout */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card-variant-1 {
+            /* CEO/Founder Card */
+        }
+
+        .card-variant-2 {
+            /* Developer Card */
+        }
+
+        .card-variant-3 {
+            /* Designer Card */
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .cards-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10mm;
+            }
+            
+            .business-card {
+                width: 89mm;
+                height: 51mm;
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .card-container:hover .business-card {
+                transform: none;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            
+            .business-card {
+                width: 320px;
+                height: 190px;
+            }
+            
+            .front-content,
+            .back-content {
+                padding: 25px;
+            }
+            
+            .company-info h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Instructions */
+        .instructions {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            color: #475569;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            max-width: 250px;
+        }
+
+        .instructions h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #0F172A;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h3>💡 How to Use</h3>
+        <p>Hover over cards to see the back side. Click and drag to move cards around. Perfect for printing or digital use!</p>
+    </div>
+
+    <div class="cards-grid">
+        <!-- CEO/Founder Card -->
+        <div class="card-container card-variant-1">
+            <div class="business-card">
+                <div class="card-face card-front">
+                    <div class="front-content">
+                        <div class="logo-section">
+                            <div class="logo-icon"></div>
+                            <div class="company-info">
+                                <h1>IT Softech</h1>
+                                <div class="tagline">Digital Innovation</div>
+                            </div>
+                        </div>
+                        
+                        <div class="services-preview">
+                            <div class="service-tag">Web Design</div>
+                            <div class="service-tag">Development</div>
+                            <div class="service-tag">Mobile Apps</div>
+                        </div>
+                    </div>
+                    <div class="decorative-element"></div>
+                </div>
+                
+                <div class="card-face card-back">
+                    <div class="back-content">
+                        <div class="contact-info">
+                            <div class="person-info">
+                                <div class="person-name">John Smith</div>
+                                <div class="person-title">CEO & Founder</div>
+                            </div>
+                            
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <div class="contact-icon">📧</div>
+                                    <div>john@itsoftech.com</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">📞</div>
+                                    <div>+1 (555) 123-4567</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">🌐</div>
+                                    <div>www.itsoftech.com</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">📍</div>
+                                    <div>Tech Hub, CA 90210</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="qr-section">
+                            <div class="qr-placeholder">QR</div>
+                            <div class="qr-text">Scan for Portfolio</div>
+                        </div>
+                    </div>
+                    <div class="back-decorative"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lead Developer Card -->
+        <div class="card-container card-variant-2">
+            <div class="business-card">
+                <div class="card-face card-front">
+                    <div class="front-content">
+                        <div class="logo-section">
+                            <div class="logo-icon"></div>
+                            <div class="company-info">
+                                <h1>IT Softech</h1>
+                                <div class="tagline">Digital Innovation</div>
+                            </div>
+                        </div>
+                        
+                        <div class="services-preview">
+                            <div class="service-tag">Full Stack</div>
+                            <div class="service-tag">Custom Software</div>
+                            <div class="service-tag">APIs</div>
+                        </div>
+                    </div>
+                    <div class="decorative-element"></div>
+                </div>
+                
+                <div class="card-face card-back">
+                    <div class="back-content">
+                        <div class="contact-info">
+                            <div class="person-info">
+                                <div class="person-name">Sarah Johnson</div>
+                                <div class="person-title">Lead Developer</div>
+                            </div>
+                            
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <div class="contact-icon">📧</div>
+                                    <div>sarah@itsoftech.com</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">📞</div>
+                                    <div>+1 (555) 123-4568</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">💻</div>
+                                    <div>github.com/sarahdev</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">💼</div>
+                                    <div>linkedin.com/in/sarahj</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="qr-section">
+                            <div class="qr-placeholder">QR</div>
+                            <div class="qr-text">View Projects</div>
+                        </div>
+                    </div>
+                    <div class="back-decorative"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UI/UX Designer Card -->
+        <div class="card-container card-variant-3">
+            <div class="business-card">
+                <div class="card-face card-front">
+                    <div class="front-content">
+                        <div class="logo-section">
+                            <div class="logo-icon"></div>
+                            <div class="company-info">
+                                <h1>IT Softech</h1>
+                                <div class="tagline">Digital Innovation</div>
+                            </div>
+                        </div>
+                        
+                        <div class="services-preview">
+                            <div class="service-tag">UI/UX Design</div>
+                            <div class="service-tag">Branding</div>
+                            <div class="service-tag">Prototyping</div>
+                        </div>
+                    </div>
+                    <div class="decorative-element"></div>
+                </div>
+                
+                <div class="card-face card-back">
+                    <div class="back-content">
+                        <div class="contact-info">
+                            <div class="person-info">
+                                <div class="person-name">Mike Chen</div>
+                                <div class="person-title">Creative Director</div>
+                            </div>
+                            
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <div class="contact-icon">📧</div>
+                                    <div>mike@itsoftech.com</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">📞</div>
+                                    <div>+1 (555) 123-4569</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">🎨</div>
+                                    <div>dribbble.com/mikechen</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">📸</div>
+                                    <div>behance.net/mikedesigns</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="qr-section">
+                            <div class="qr-placeholder">QR</div>
+                            <div class="qr-text">Design Portfolio</div>
+                        </div>
+                    </div>
+                    <div class="back-decorative"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive drag functionality
+        let isDragging = false;
+        let currentCard = null;
+        let initialX, initialY, xOffset = 0, yOffset = 0;
+
+        document.querySelectorAll('.card-container').forEach(card => {
+            card.addEventListener('mousedown', dragStart);
+            card.addEventListener('mouseup', dragEnd);
+            card.addEventListener('mousemove', drag);
+            card.addEventListener('mouseleave', dragEnd);
+        });
+
+        function dragStart(e) {
+            if (e.type === "mousedown") {
+                initialX = e.clientX - xOffset;
+                initialY = e.clientY - yOffset;
+            }
+
+            if (e.target.closest('.card-container')) {
+                currentCard = e.target.closest('.card-container');
+                isDragging = true;
+                currentCard.style.cursor = 'grabbing';
+                currentCard.style.zIndex = '1000';
+            }
+        }
+
+        function dragEnd(e) {
+            if (isDragging && currentCard) {
+                currentCard.style.cursor = 'grab';
+                currentCard.style.zIndex = 'auto';
+            }
+            
+            initialX = currentX;
+            initialY = currentY;
+            isDragging = false;
+            currentCard = null;
+        }
+
+        let currentX = 0, currentY = 0;
+
+        function drag(e) {
+            if (isDragging && currentCard) {
+                e.preventDefault();
+                
+                if (e.type === "mousemove") {
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                }
+
+                xOffset = currentX;
+                yOffset = currentY;
+
+                currentCard.style.transform = `translate(${currentX}px, ${currentY}px)`;
+            }
+        }
+
+        // Add subtle animation on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card-container');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    
+                    requestAnimationFrame(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    });
+                }, index * 200);
+            });
+        });
+
+        // Add hover sound effect simulation
+        document.querySelectorAll('.card-container').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform += ' scale(1.02)';
+                card.style.transition = 'transform 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                if (!isDragging) {
+                    card.style.transform = card.style.transform.replace(' scale(1.02)', '');
+                }
+            });
+        });
+
+        // Print functionality
+        function printCards() {
+            window.print();
+        }
+
+        // Add print button
+        const printButton = document.createElement('button');
+        printButton.innerHTML = '🖨️ Print Cards';
+        printButton.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #38BDF8, #8B5CF6);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+            transition: all 0.3s ease;
+        `;
+        
+        printButton.addEventListener('click', printCards);
+        printButton.addEventListener('mouseenter', () => {
+            printButton.style.transform = 'translateY(-2px)';
+            printButton.style.boxShadow = '0 8px 25px rgba(56, 189, 248, 0.4)';
+        });
+        
+        printButton.addEventListener('mouseleave', () => {
+            printButton.style.transform = 'translateY(0)';
+            printButton.style.boxShadow = '0 4px 15px rgba(56, 189, 248, 0.3)';
+        });
+        
+        document.body.appendChild(printButton);
+    </script>
+</body>
+</html>
